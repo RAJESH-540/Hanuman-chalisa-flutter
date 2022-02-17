@@ -14,17 +14,67 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("श्री हनुमान चालीसा॥"),
+        title: const Text("श्री हनुमान चालीसा॥"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
             ListTile(
-                title: Text("श्री हनुमान चालीसा॥"),
-                contentPadding: EdgeInsets.all(16.0),
+                title: const Text("श्री हनुमान चालीसा॥"),
                 onTap: () {},
-                tileColor: Colors.orangeAccent)
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                tileColor: Colors.orangeAccent),
+            const SizedBox(
+              height: 8.0,
+            ),
+            ListTile(
+                title: const Text(
+                  // "श्री हनुमान चालीसा॥",
+                  "हनुमानजी की आरती",
+                ),
+                // contentPadding: const EdgeInsets.all(8.0),
+                onTap: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                tileColor: Colors.orangeAccent),
+            const SizedBox(
+              height: 8.0,
+            ),
+            ListTile(
+                title: const Text(
+                  "श्री बजरंग बाण का पाठ",
+                ),
+                // contentPadding: const EdgeInsets.all(8.0),
+                onTap: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                tileColor: Colors.orangeAccent),
+            const SizedBox(
+              height: 8.0,
+            ),
+            ListTile(
+                title: const Text(
+                  "श्री राम चंद्र कृपालु",
+                ),
+                // contentPadding: const EdgeInsets.all(8.0),
+                onTap: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                tileColor: Colors.orangeAccent),
+            const SizedBox(
+              height: 8.0,
+            ),
+            ListTile(
+                title: const Text(
+                  "श्री राम चंद्र कृपालु",
+                ),
+                // contentPadding: const EdgeInsets.all(8.0),
+                onTap: () {},
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12.0)),
+                tileColor: Colors.orangeAccent),
           ],
         ),
       ),
