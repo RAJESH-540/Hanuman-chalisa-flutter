@@ -1,3 +1,5 @@
+import 'package:chalisa/data/PrayerModel.dart';
+import 'package:chalisa/screens/detailScreen/detailScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -19,63 +21,30 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
-            ListTile(
-                title: const Text("श्री हनुमान चालीसा॥"),
-                onTap: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
-                tileColor: Colors.orangeAccent),
-            const SizedBox(
-              height: 8.0,
-            ),
-            ListTile(
-                title: const Text(
-                  // "श्री हनुमान चालीसा॥",
-                  "हनुमानजी की आरती",
-                ),
-                // contentPadding: const EdgeInsets.all(8.0),
-                onTap: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
-                tileColor: Colors.orangeAccent),
-            const SizedBox(
-              height: 8.0,
-            ),
-            ListTile(
-                title: const Text(
-                  "श्री बजरंग बाण का पाठ",
-                ),
-                // contentPadding: const EdgeInsets.all(8.0),
-                onTap: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
-                tileColor: Colors.orangeAccent),
-            const SizedBox(
-              height: 8.0,
-            ),
-            ListTile(
-                title: const Text(
-                  "श्री राम चंद्र कृपालु",
-                ),
-                // contentPadding: const EdgeInsets.all(8.0),
-                onTap: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
-                tileColor: Colors.orangeAccent),
-            const SizedBox(
-              height: 8.0,
-            ),
-            ListTile(
-                title: const Text(
-                  "श्री राम चंद्र कृपालु",
-                ),
-                // contentPadding: const EdgeInsets.all(8.0),
-                onTap: () {},
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12.0)),
-                tileColor: Colors.orangeAccent),
-          ],
+          children: PrayerModel.getAllPrayers()
+              //TODO: transforming one object into another
+              .map((currentPrayer) => Column(
+                    children: [
+                      ListTile(
+                          title: Text(currentPrayer.prayerName),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DetailsScreen(
+                                          model: currentPrayer,
+                                        )));
+                          },
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0)),
+                          tileColor: Colors.orangeAccent),
+                      const SizedBox(
+                        height: 8.0,
+                      ),
+                    ],
+                  ))
+              //TODO:  converting iterable to list
+              .toList(),
         ),
       ),
     );
