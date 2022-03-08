@@ -14,9 +14,9 @@ class PrayerModel {
   static List<PrayerModel> getAllPrayers() {
     return [
       PrayerModel(_allPrayersName[0], hanumanChalisa),
-      PrayerModel(_allPrayersName[1], _allPrayersName[1]),
-      PrayerModel(_allPrayersName[2], _allPrayersName[2]),
-      PrayerModel(_allPrayersName[3], _allPrayersName[3])
+      PrayerModel(_allPrayersName[1], ramChandarKirpalu),
+      PrayerModel(_allPrayersName[2], arti),
+      PrayerModel(_allPrayersName[3], arti)
     ];
   }
 }
